@@ -1,7 +1,17 @@
 let timer = document.querySelector(".timer");
 let start = document.querySelector(".start");
 let buttons = document.querySelector(".buttons");
+let hour = document.querySelector("hour");
+let minute = document.querySelector(".minute");
 let time = new Date();
+
+hour.addEventListener("dblclick", (e) => {
+
+    timer.removeChild(hour);
+    let hours = document.createElement("input");
+    hours.classList = "hours";
+    timer.appendChild(hours);
+})
 
 start.addEventListener("click", handleStart);
 
@@ -29,9 +39,15 @@ function getTime() {
     const mm = format(time.getMinutes());
     const ss = format(time.getSeconds());
 
+
+
+
+
+
     return `${hh}:${mm}:${ss}`;
 
 }
+
 
 function format(number) {
 
